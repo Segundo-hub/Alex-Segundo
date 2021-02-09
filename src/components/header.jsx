@@ -1,13 +1,19 @@
 import { Link } from "gatsby"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import { faHome, faCode, faHeadphonesAlt, faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { ContainerLarge } from "./container/ContainerLarge"
+import { Helmet } from "react-helmet"
 
 const Navigations = styled.header`
   width: 100%;
   background-color: #3434;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
   @media screen and(min-width: var(--lg-breakpoint)){
     height: 100vh;
   }
@@ -32,6 +38,9 @@ const Router = styled(Link)`
   :hover > ${FontIcon}{
     transform: scale(1.12);
     margin-right: 0.65rem;
+  }
+  @media(min-width: 1200px){
+    font-size: 1.8rem;
   }
 `;
 
@@ -64,46 +73,56 @@ const Routes = styled.div`
     visibility: visible;
     background-color: var(--deep-dark);
     max-height: 100vh;
-    height: calc(100vh - var(--header-height) - var(--scroll-size) - var(--header-pg-bt));
-    @media (min-width: var(--lg-breakpoint)){
-      a{
-        font-size: 2rem;
-      }
-    }
-    a{
-      font-size: 1.2rem;
-    }
+    height: calc(100vh - var(--header-height) - var(--header-pg-bt));
     ${FontIcon}{
-      font-size: 2rem;
+      font-size: 1.75rem;
     }
   }
 `;
 
+const Caption = styled.h2`
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  color: slategrey;
+`;
 
 
 const Header = () => {
   const [active, setActive] = useState(false);
+  const [title, setTitle] = useState('')
+
   const handleClick = () => {
     setActive(!active)
   }
+
+  useEffect( () => {
+    setTitle(document.title)
+  })
   return(
-  <Navigations className={ active === true ? 'active__nav' : false }>
-    <ContainerLarge>
-      <Routes>
-        <TopNavigation>
-          <ToggleIcon>
-            <FontAwesomeIcon onClick={ handleClick } role="button" icon={ faBars } size="2x"/>
-          </ToggleIcon>
-        </TopNavigation>
-        
-          <RoutesContainer className={ active === true ? 'active' : false }>
-            <Router to="/"><FontIcon icon={ faHome } />Home</Router>
-            <Router to="/music"><FontIcon icon={ faHeadphonesAlt }/>Music</Router>
-            <Router to="/dev"><FontIcon icon={ faCode }/>Develop</Router>
-          </RoutesContainer>
-      </Routes>
-    </ContainerLarge>
-  </Navigations>
+  <>
+    <Helmet>
+      <body className={ active === true ? 'nav__is__activated' : false } />
+    </Helmet>
+    <Navigations className={ active === true ? 'active__nav' : false }>
+      <ContainerLarge>
+        <Routes>
+          <TopNavigation>
+            <ToggleIcon>
+              <FontAwesomeIcon onClick={ handleClick } role="button" icon={ faBars } size="2x"/>
+            </ToggleIcon>
+            <Caption className="page-title__is__activated">{ title }</Caption>
+          </TopNavigation>
+          
+            <RoutesContainer className={ active === true ? 'active' : false }>
+              <Router to="/"><FontIcon icon={ faHome } />Home</Router>
+              <Router to="/music"><FontIcon icon={ faHeadphonesAlt }/>Music</Router>
+              <Router to="/dev"><FontIcon icon={ faCode }/>Develop</Router>
+            </RoutesContainer>
+        </Routes>
+      </ContainerLarge>
+    </Navigations>
+  </>
 )
 }
 

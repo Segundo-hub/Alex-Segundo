@@ -8,9 +8,6 @@ import { MusicPlayer } from "../../components/music/MusicReproductor"
 const IndexPage = () => (
     <Layout>
         <SEO title="Music" />
-        <Container>
-            <p>This page is a Music Section </p>
-        </Container>
         <MusicPlayer />
     </Layout>
 )

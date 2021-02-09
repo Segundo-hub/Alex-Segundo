@@ -1,0 +1,31 @@
+.card{
+    height: 350px;
+    min-width: 350px;
+    border: 2px solid #1d252e;
+    border-radius: .10rem;
+    grid-template-rows: 50px 1fr;
+    row-gap: normal;
+    .header{
+        background-color: #1c2324cc; // #1d252e;
+        display: flex;
+        align-items: center;
+    }
+    .body{
+        background-color: #2a313a;
+        margin: 0;
+        width: 100%;
+    }
+
+}
+
+.card_caption{
+    display: inline-block;
+    padding: 0 .5rem;
+}
+
+.rounded_icon{
+    border: 1px solid #455568;
+    padding: .15rem;
+    margin-left: .5rem;
+    background-color: #313d4b;
+}
