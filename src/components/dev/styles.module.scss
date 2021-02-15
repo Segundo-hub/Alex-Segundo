@@ -1,10 +1,8 @@
 .card{
-    height: 350px;
     min-width: 350px;
     border: 2px solid #1d252e;
     border-radius: .10rem;
     grid-template-rows: 50px 1fr;
-    row-gap: normal;
     .header{
         background-color: #1c2324cc; // #1d252e;
         display: flex;
@@ -28,4 +26,11 @@
     padding: .15rem;
     margin-left: .5rem;
     background-color: #313d4b;
+}
+.languaje_item{
+    height: 3.5rem;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    padding: 0 1rem;
 }

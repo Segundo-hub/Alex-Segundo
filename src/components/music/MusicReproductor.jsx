@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import audio from './../../assets/audio/example.mp3'
 import { faPause, faPlay } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { MusicCaption, MusicTitle, PlayerContainer, PlayIcon, MusicArtist, Poster, MusicStart, PosterStart, PosterSongLeyend } from './StyledStyles'
+import { MusicCaption, MusicTitle, PlayerContainer, PlayIcon, MusicArtist, Poster, MusicStart, PosterStart, PosterSongLeyend, MusicMapContainer } from './StyledStyles'
 import { useSelector } from 'react-redux'
-import starPoster from './../../assets/images/selena_poster.jpg'
-import pathPoster from './../../assets/audio/selena_gomez.mp3'
+import starPoster from './../../assets/images/star_poster.jpg'
+import pathPoster from './../../assets/audio/star_song.mp3'
 import { Container } from '../container'
 
 export const MusicPlayer = () => {
@@ -26,8 +25,8 @@ export const MusicPlayer = () => {
 
     const starSong = {
         poster: starPoster,
-        title: 'Kill em With Kindness (|AS| Remix)',
-        artist: 'Selena Gomez',
+        title: 'Apollo (|AS| Remix)',
+        artist: 'Timebelle',
         path: pathPoster
     }
     const _changeMusic = (title, artist, path, poster) => {
@@ -39,7 +38,7 @@ export const MusicPlayer = () => {
 
     return(
     <>
-    <Container withPadding="10">
+    <Container withPadding="10" className="cp--animate">
         <MusicStart onClick={() => _changeMusic(starSong.title, starSong.artist, starSong.path, starSong.poster)}>
             <PosterStart src={ starSong.poster } />
             <PosterSongLeyend>
@@ -47,21 +46,23 @@ export const MusicPlayer = () => {
                 <MusicArtist>{ starSong.artist }</MusicArtist>
             </PosterSongLeyend>
         </MusicStart>
+        <MusicMapContainer className="cp--animate">
         {
-        Songs.map( (sg) => (
+            Songs.map( (sg) => (
                 <MusicCaption key={sg.id} onClick={() => _changeMusic(sg.title, sg.artist, sg.path, sg.poster)}>
                     <Poster src={sg.poster} alt="" srcset=""/>
                     <div className="caption-center">
                         <MusicTitle>{ sg.title }</MusicTitle>
                         <MusicArtist>{ sg.artist }</MusicArtist>
-                    </div>
+                     </div>
                 </MusicCaption>  
-        ))
-        }      
+            ))
+        }  
+        </MusicMapContainer>    
     </Container> 
     {
         musicCurrent.title !== ''
-        ? <PlayerContainer>
+        ? <PlayerContainer className="cp--animate">
             <Poster src={musicCurrent.poster} alt=""/>
             <audio autoPlay id="music" onPlay={ () => setPlaying(true) } onPause={ () => setPlaying(false) } src={ musicCurrent.path } >
                 <track default/>

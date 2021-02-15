@@ -14,7 +14,7 @@ export const PlayerContainer = styled.div`
     z-index: 2000;
 `;
 
-export const MusicStart = styled.article`
+export const MusicStart = styled.figure`
     width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -29,10 +29,14 @@ export const MusicStart = styled.article`
 `;
 
 export const PosterStart = styled.img`
-    width: 240px;
-    height: 240px;
+    width: 13rem;
+    height: 13rem;
     margin: 0 auto;
     display: block;
+    @media(min-width: 1200px){
+        width: 15rem;
+        height: 15rem;
+    }
 `;
 
 export const PosterSongLeyend = styled.div`
@@ -44,6 +48,8 @@ export const PlayIcon = styled.span`
     position: relative;
     width: 30px;
     height: 30px;
+    min-width: 30px;
+    min-height: 30px;
     margin: 0 10px;
     display: inline-flex;
     justify-content: center;
@@ -74,7 +80,7 @@ export const MusicCaption = styled.div`
     padding: .5rem;
     :hover{
         cursor: pointer;
-        background-color: #293329;
+        background-color:  rgba(27, 36, 27, 0.432);
     }
     .caption-center{
         padding: 0 10px;
@@ -83,6 +89,9 @@ export const MusicCaption = styled.div`
 
 export const MusicTitle = styled.h3`
     color: #c9c9c9;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 `;
 
 export const MusicArtist = styled.p`
@@ -93,4 +102,11 @@ export const Poster = styled.img`
     width: 60px;
     height: 60px;
     object-fit: cover;
+`;
+
+export const MusicMapContainer = styled.div`
+    display: block;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 28vh;
 `;

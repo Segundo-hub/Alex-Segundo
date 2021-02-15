@@ -1,10 +1,11 @@
 import { Link } from "gatsby"
 import React, { useEffect, useState } from "react"
 import styled from "styled-components"
-import { faHome, faCode, faHeadphonesAlt, faBars } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faCode, faHeadphonesAlt, faBars, faChevronRight, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { ContainerLarge } from "./container/ContainerLarge"
 import { Helmet } from "react-helmet"
+import { faClose } from "../custom/faClose"
 
 const Navigations = styled.header`
   width: 100%;
@@ -102,14 +103,14 @@ const Header = () => {
   return(
   <>
     <Helmet>
-      <body className={ active === true ? 'nav__is__activated' : false } />
+      <body className={ active === true ? 'nav__is__activated' : false } data-page={ title.split('|')[0].trim().toLowerCase() } />
     </Helmet>
     <Navigations className={ active === true ? 'active__nav' : false }>
       <ContainerLarge>
         <Routes>
           <TopNavigation>
-            <ToggleIcon>
-              <FontAwesomeIcon onClick={ handleClick } role="button" icon={ faBars } size="2x"/>
+            <ToggleIcon role="button" aria-label="button-toggle">
+              <FontAwesomeIcon onClick={ handleClick } role="button" icon={ active === true ? faTimes : faBars } size="2x"/>
             </ToggleIcon>
             <Caption className="page-title__is__activated">{ title }</Caption>
           </TopNavigation>

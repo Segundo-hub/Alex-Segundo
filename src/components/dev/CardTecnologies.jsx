@@ -16,17 +16,17 @@ export const CardTecnologies = ({ title = '', faIconOne, faIconTwo, faIconTree, 
             </div>
             <h3 className={Styles.card_caption}>{title}</h3>
         </span>
-        <div className={`lg_row_9 mi_grid mi_row_n_4 ${Styles.body}`}>
-            <span className="languaje-item lg_row_1">
+        <div className={`mi_grid ${Styles.body}`}>
+            <span className={Styles.languaje_item}>
                 <FontAwesomeIcon icon={ faIconOne || faTerminal } /> CMD
             </span>
-            <span className="languaje-item lg_rows_2">
+            <span className={Styles.languaje_item}>
                 <FontAwesomeIcon icon={ faIconTwo || faJs } /> JavaScript
             </span>
-            <span className="languaje-item lg_rows_3">
+            <span className={Styles.languaje_item}>
                 <FontAwesomeIcon icon={ faIconTree || faHtml5 } /> HTML5
             </span>
-            <span className="languaje-item lg_rows_4">
+            <span className={Styles.languaje_item}>
                 <FontAwesomeIcon icon={ faIconFour || faJava } /> Java
             </span>
         </div>
