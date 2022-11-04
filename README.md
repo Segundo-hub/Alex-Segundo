@@ -1,54 +1,50 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal TypeScript starter
-</h1>
+# MY PORTFOLIO WEBSITE
 
-## 🚀 Quick start
+This project is the source code of my portfolio made in Gatsby (React Framework), with framer-motion and GSAP for animation.
+My portfolio is available at: http://alexsegundo.com
 
-1.  **Create a Gatsby site.**
+### SETUP PROJECT
 
-    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
+-   Install dependencies
 
-    ```shell
-    # create a new Gatsby site using the minimal TypeScript starter
-    npm init gatsby
-    ```
+```bash
+npm i
+```
 
-2.  **Start developing.**
+-   Developement mode
 
-    Navigate into your new site’s directory and start it up.
+```bash
+npm run develop
+```
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+-   Compile project
 
-3.  **Open the code and start customizing!**
+```bash
+npm run build
+```
 
-    Your site is now running at http://localhost:8000!
+-   Deploy with firebase
 
-    Edit `src/pages/index.tsx` to see your site update in real-time!
+```bash
+firebase deploy
+```
 
-4.  **Learn more**
+### USE FIREBASE TOOLS
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+-   Install firebase tools
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+```bash
+npm install -g firebase-tools
+```
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+-   Login to account
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+```bash
+firbase login
+```
 
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+-   Create new project
 
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+```bash
+firbase init
+```
