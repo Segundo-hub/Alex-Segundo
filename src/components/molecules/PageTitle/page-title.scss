@@ -1,0 +1,19 @@
+.m-page-title {
+    text-align: center;
+    padding: 8vh 0;
+    &__reflect {
+        font: normal 500 18vw/1.25 var(--font-extra);
+        letter-spacing: 0.25em;
+        color: var(--white-alpha-opaque);
+        margin-left: -100%;
+        margin-right: -100%;
+        display: inline-block;
+        overflow: hidden;
+    }
+
+    @include media-from(large) {
+        &__reflect {
+            font-size: 7.85vw;
+        }
+    }
+}

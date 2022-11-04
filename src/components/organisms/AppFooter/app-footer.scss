@@ -1,0 +1,32 @@
+.o-footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 6vh;
+    &--content {
+        font: normal 400 2.4vw/1 var(--font-mono);
+        column-gap: 1ch;
+        opacity: 0.8;
+    }
+    &__brand {
+        width: 2.5em;
+        height: 2.5em;
+    }
+    &__caption {
+        color: var(--white-alpha);
+    }
+
+    @include media-from(large) {
+        bottom: 16vh;
+        &__caption {
+            font-size: 0.75vw;
+        }
+        &__brand {
+            width: 1.25em;
+            height: 1.25em;
+        }
+        &--content {
+            column-gap: 0.2ch;
+        }
+    }
+}

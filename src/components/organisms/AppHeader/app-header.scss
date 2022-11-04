@@ -1,0 +1,15 @@
+.o-header,
+.o-header--right {
+    position: absolute;
+    left: 0;
+    right: 0;
+    transform-origin: 100% 100%;
+    z-index: 1;
+    opacity: 0;
+}
+
+.o-header--right {
+    transform: rotate(-90deg);
+    right: 2vw;
+    left: initial;
+}

@@ -1,0 +1,11 @@
+.o-works {
+    --grid-columns: 1;
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
+    row-gap: 14vmin;
+
+    @include media-from(large) {
+        --grid-columns: 2;
+        gap: 4vw 5vw;
+    }
+}

@@ -1,0 +1,47 @@
+.h-presentation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.k-title {
+    font: normal 400 10.2vw/1.6 var(--font-expletus);
+    letter-spacing: 1.25vw;
+    color: var(--teal-accent);
+    text-indent: 1.25vw;
+    &-part {
+        padding-left: 0.2em;
+        padding-right: 0.2em;
+    }
+    &-item {
+        display: inline-block;
+        letter-spacing: 0.03em;
+    }
+
+    @include media-from(large) {
+        font-size: 5vw;
+        line-height: 1.4;
+    }
+}
+
+.t-title {
+    font: normal 500 3vw/1.4 var(--font-extra);
+    letter-spacing: 0.95vw;
+    color: var(--white-alpha);
+    opacity: 0.55;
+    text-indent: 0.95vw;
+    padding: 0.5em 0;
+    &-part {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
+    &-item {
+        display: inline-block;
+        letter-spacing: 0;
+    }
+    
+    @include media-from(large) {
+        font-size: 1vw;
+    }
+}

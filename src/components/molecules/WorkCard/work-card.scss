@@ -1,0 +1,109 @@
+.m-workcard {
+    &__title {
+        font: normal 500 3.8vw/1.25 var(--font-extra);
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--white-alpha);
+        opacity: 0.8;
+        padding-bottom: 1em;
+        text-indent: 0.4em;
+    }
+
+    &__content {
+        background: transparent var(--card-image) no-repeat center / cover;
+        padding: 30px 25px;
+        position: relative;
+        aspect-ratio: 7/4;
+        align-items: flex-end;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-image: linear-gradient(324.53deg, rgba(26, 35, 48, 0.6) 66.8%, rgba(26, 35, 48, 0) 97.44%);
+            backdrop-filter: blur(6px);
+        }
+    }
+
+    @include media-from(large) {
+        &__title {
+            font-size: 1.3vw;
+            padding-bottom: 0.8em;
+        }
+        &__content {
+            padding: 8% 6%;
+        }
+    }
+}
+
+.mw-article {
+    z-index: 1;
+    padding: 2vmin 0;
+    &__title {
+        font: normal 600 20px/1.25 var(--font-sans);
+        letter-spacing: 0.06em;
+        color: var(--white-alpha);
+        padding-bottom: 1em;
+    }
+
+    &__content {
+        font: normal 400 16px/1.6 var(--font-sans);
+        letter-spacing: 0.06em;
+        color: var(--white-alpha);
+    }
+
+    &__techs {
+        font: normal 400 15px/1.6 var(--font-mono);
+        color: var(--teal-accent);
+        padding-top: 1em;
+        display: inline-block;
+    }
+
+    @include media-from(large) {
+        padding: 0;
+        &__title {
+            font-size: 1.3vw;
+        }
+        &__content {
+            font-size: 1vw;
+        }
+        &__techs {
+            font-size: 0.9vw;
+        }
+    }
+}
+
+.mw-links {
+    padding-top: 5vmin;
+    column-gap: 2ch;
+    a {
+        color: var(--white-alpha);
+        display: inline-flex;
+        transition: all 300ms;
+        svg {
+            width: 22px;
+            height: 22px;
+        }
+        &:hover {
+            transform: scale(0.9);
+            color: var(--red-accent);
+        }
+    }
+
+    @include media-from(large) {
+        position: absolute;
+        right: 5.5ch;
+        top: 5.5ch;
+        padding-top: 0;
+        column-gap: 2.4ch;
+        a {
+            color: var(--teal-accent);
+        }
+        a svg {
+            width: 2.25vmin;
+            height: 2.25vmin;
+        }
+    }
+}

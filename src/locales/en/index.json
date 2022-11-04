@@ -1,0 +1,34 @@
+{
+    "works": [
+        {
+            "id": 1,
+            "slogan": "Swilen - PHP framework",
+            "title": "Swilen Framework",
+            "content": "PHP Mini Framework inspired in Laravel and Expressjs; support routing, middleware, container dependency injection, database wrapper, token with Jwt standard, small data validation. Developed with Microkernel arquitecture.",
+            "technologies": ["PHP", "MySQL", "Pest", "Composer"],
+            "poster": "",
+            "link": "",
+            "github": "string"
+        },
+        {
+            "id": 2,
+            "slogan": "Seemly - Website",
+            "title": "Seemly - Data Structures",
+            "content": "PHP Mini Framework inspired in Laravel and Expressjs; support routing, middleware, container dependency injection, database wrapper, token with Jwt standard, small data validation. Developed with Microkernel arquitecture.",
+            "technologies": ["Next", "React", "Markdown", "Redux Toolkit"],
+            "poster": "",
+            "link": "",
+            "github": "string"
+        },
+        {
+            "id": 3,
+            "slogan": "Janque - Website",
+            "title": "Centro Poblado Janque",
+            "content": "PHP Mini Framework inspired in Laravel and Expressjs; support routing, middleware, container dependency injection, database wrapper, token with Jwt standard, small data validation. Developed with Microkernel arquitecture.",
+            "technologies": ["Nuxt", "Vue", "Markdown", "Vuex"],
+            "poster": "",
+            "link": "",
+            "github": "string"
+        }
+    ]
+}

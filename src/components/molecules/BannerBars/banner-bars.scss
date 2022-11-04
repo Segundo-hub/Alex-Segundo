@@ -1,0 +1,17 @@
+.m-bars {
+    background-color: var(--black);
+    height: 10vh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    &--top {
+        top: 0;
+    }
+    &--bottom {
+        bottom: 0;
+    }
+
+    @include media-to(large) {
+        display: none;
+    }
+}

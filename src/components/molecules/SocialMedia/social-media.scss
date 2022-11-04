@@ -1,0 +1,35 @@
+.m-social-media {
+    justify-content: space-between;
+    &__item {
+        font: normal 500 1.1vw/1 var(--font-mono);
+    }
+    span {
+        letter-spacing: 0.05em;
+    }
+}
+
+.m-social-link {
+    color: var(--white-accent);
+    column-gap: 0.5em;
+    transition: color 250ms;
+    &__icon {
+        transition: transform 400ms ease-in-out;
+        width: 2.4em;
+        height: 2.4em;
+    }
+    &:hover {
+        color: var(--teal-accent);
+        svg {
+            transform: scale(0.9);
+        }
+    }
+    @include media-to(large) {
+        &__label {
+            display: none;
+        }
+        &__icon {
+            width: 38px;
+            height: 38px;
+        }
+    }
+}

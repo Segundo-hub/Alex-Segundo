@@ -1,0 +1,26 @@
+#___gatsby {
+    position: relative;
+    overflow: hidden;
+    &::after {
+        content: '';
+        background: var(--black) url(./../images/dev-bg.jpg) no-repeat center / cover;
+        position: absolute;
+        top: -3%;
+        bottom: -3%;
+        left: -8%;
+        right: -8%;
+        z-index: -1;
+        will-change: transform, opacity, filter;
+        animation: 14s ease-in-out infinite alternate bg-movement;
+    }
+}
+
+#gatsby-focus-wrapper {
+    height: 100%;
+    min-width: 100vw;
+    max-height: 100vh;
+    overflow: hidden auto;
+    [data-page='home'] & {
+        overflow: hidden;
+    }
+}

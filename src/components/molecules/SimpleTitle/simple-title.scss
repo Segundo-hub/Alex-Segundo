@@ -1,0 +1,7 @@
+.m-simple-title {
+    padding: 6vh 0;
+
+    @include media-from(large) {
+        padding: 8vh 0;
+    }
+}

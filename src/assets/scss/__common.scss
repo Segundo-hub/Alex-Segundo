@@ -1,0 +1,53 @@
+.flex,
+.cross-center,
+.main-center,
+.abs-center,
+.flex-col,
+.main-distribute,
+.flex-row {
+    display: flex;
+}
+
+.flex-inline {
+    display: inline-flex;
+}
+
+.cross-center,
+.abs-center {
+    align-items: center;
+    align-content: center;
+}
+
+.main-center,
+.abs-center {
+    justify-items: center;
+    justify-content: center;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.line-height-0 {
+    line-height: 1;
+}
+
+.w-screen {
+    width: 100vw;
+}
+
+.h-screen {
+    height: 100vh;
+}
+
+.h-full {
+    height: 100%;
+}

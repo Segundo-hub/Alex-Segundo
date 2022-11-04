@@ -1,0 +1,60 @@
+.m-menu-wrapper {
+    --m-font-size: 3.1vw;
+    @include media-from(large) {
+        --m-font-size: 1vw;
+    }
+}
+
+.m-menu {
+    &-item {
+        font: normal 500 var(--m-font-size) / 1.25 var(--font-extra);
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+    &__link {
+        font: inherit;
+        text-transform: uppercase;
+        letter-spacing: 0.8vw;
+        color: var(--white-alpha);
+        opacity: 0.55;
+        transition: opacity 400ms, color 500ms;
+        &:hover {
+            opacity: 0.4;
+        }
+    }
+    .m-menu-right & {
+        &-item {
+            padding: 0 1em;
+        }
+        &__link {
+            letter-spacing: 0.25em;
+        }
+        &--active {
+            color: var(--red-accent);
+            opacity: 0.9;
+        }
+    }
+
+    @include media-from(large) {
+        &-item {
+            padding-left: 2.5em;
+            padding-right: 2.5em;
+        }
+    }
+}
+
+.m-menu-brand {
+    font-size: var(--m-font-size);
+    width: 2em;
+    height: 2em;
+    margin: 0 0.5em;
+    opacity: 0.8;
+    a {
+        display: inline-flex;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        transform: rotate(90deg);
+    }
+}

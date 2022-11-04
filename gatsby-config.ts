@@ -1,32 +1,77 @@
-import type { GatsbyConfig } from "gatsby";
+import type { GatsbyConfig } from 'gatsby'
 
 const config: GatsbyConfig = {
-  siteMetadata: {
-    title: `alex-second`,
-    siteUrl: `https://www.yourdomain.tld`
-  },
-  // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
-  // If you use VSCode you can also use the GraphQL plugin
-  // Learn more at: https://gatsby.dev/graphql-typegen
-  graphqlTypegen: true,
-  plugins: ["gatsby-plugin-sass", {
-    resolve: 'gatsby-plugin-google-analytics',
-    options: {
-      "trackingId": "87"
-    }
-  }, "gatsby-plugin-image", "gatsby-plugin-sitemap", {
-    resolve: 'gatsby-plugin-manifest',
-    options: {
-      "icon": "src/images/icon.png"
-    }
-  }, "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "images",
-      "path": "./src/images/"
+    siteMetadata: {
+        title: `Alex Segundo`,
+        siteUrl: `https://alexsegundo.com`,
+        description: `I make software with my soul, for the same reason as you. I compose melodies to enjoy the development. A Front End Developer and EDM Producer around here`,
+        author: `alex-segundo`,
+        lang: `en-US`,
+        robots: `index, follow`,
     },
-    __key: "images"
-  }]
-};
+    plugins: [
+        {
+            resolve: 'gatsby-plugin-sass',
+            options: {
+                additionalData: `@import '@assets/scss/__settings.scss';`,
+            },
+        },
+        'gatsby-plugin-image',
+        'gatsby-plugin-sitemap',
+        {
+            resolve: 'gatsby-plugin-manifest',
+            options: {
+                name: `Alex Segundo Website`,
+                short_name: `Alex Segundo`,
+                description: `A Front End Developer and EDM Producer around here`,
+                lang: `en`,
+                display: `standalone`,
+                icon: `src/assets/images/icon.png`,
+                start_url: `/`,
+                background_color: `#070808`,
+                theme_color: `#22aad3`,
+            },
+        },
+        'gatsby-plugin-sharp',
+        `gatsby-transformer-sharp`,
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `images`,
+                path: `${__dirname}/src/assets/images`,
+            },
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `locale`,
+                path: `${__dirname}/src/locales`,
+            },
+        },
+        // {
+        //     resolve: `gatsby-plugin-react-i18next`,
+        //     options: {
+        //         localeJsonSourceName: `locale`,
+        //         languages: [`en`, `es`],
+        //         defaultLanguage: `en`,
+        //         trailingSlash: 'always',
+        //         fallbackLanguage: `en`,
+        //         i18nextOptions: {
+        //             interpolation: {
+        //                 escapeValue: false,
+        //             },
+        //             keySeparator: false,
+        //             nsSeparator: false,
+        //         },
+        //         pages: [
+        //             {
+        //                 matchPath: '/',
+        //                 languages: ['en']
+        //             }
+        //         ]
+        //     },
+        // },
+    ],
+}
 
-export default config;
+export default config

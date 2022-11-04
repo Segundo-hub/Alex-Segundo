@@ -1,0 +1,30 @@
+.err-caption {
+    text-align: center;
+    padding-bottom: 2.5em;
+    &__code {
+        font: normal 600 28vmin/1 var(--font-expletus);
+        color: var(--red-accent);
+    }
+    &__label {
+        font: normal 600 9vmin/1 var(--font-expletus);
+    }
+    &__text {
+        font: normal 500 3.4vmin/1 var(--font-sans);
+        padding: 1.25em 0;
+        .uri {
+            color: var(--teal-accent);
+        }
+    }
+
+    @include media-from(large) {
+        &__code {
+            font-size: 12vw;
+        }
+        &__label {
+            font-size: 4vw;
+        }
+        &__text {
+            font-size: 1.2vw;
+        }
+    }
+}

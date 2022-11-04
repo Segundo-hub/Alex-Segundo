@@ -1,0 +1,26 @@
+.m-bio {
+    &-article {
+        text-align: center;
+        padding-bottom: 6vh;
+        p {
+            font: normal 400 3.65vw/1.6 var(--font-sans);
+            letter-spacing: 0.1em;
+        }
+        p:not(:last-child) {
+            padding-bottom: 1.25em;
+        }
+
+        @include media-from(large) {
+            p {
+                font-size: 1.25vw;
+            }
+        }
+    }
+    &-tech {
+        color: var(--teal-light);
+        font-family: var(--font-mono);
+        font-weight: 500;
+        font-size: 0.9em;
+        letter-spacing: 0;
+    }
+}

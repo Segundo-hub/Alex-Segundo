@@ -1,0 +1,22 @@
+.at-button {
+    border: 2px solid var(--teal-accent);
+    padding: 0.8em 1em;
+    font-size: 18px;
+    background-color: #22aad300;
+    transition: all 500ms ease-in-out;
+    &:hover {
+        background-color: #22aad324;
+    }
+
+    &.not-found {
+        font: normal 600 3.5vw/1.25 var(--font-expletus);
+        color: var(--red-accent);
+        letter-spacing: 0.05em;
+    }
+
+    @include media-from(large) {
+        &.not-found {
+            font-size: 0.9vw;
+        }
+    }
+}
