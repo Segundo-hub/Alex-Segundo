@@ -1,3 +1,4 @@
+import { Script } from 'gatsby'
 import React from 'react'
 
 export default function HtmlTemplate(props) {
