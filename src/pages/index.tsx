@@ -2,7 +2,7 @@ import { ViewLayout } from '@layout/ViewLayout'
 import { SEOComponent } from '@component/utils/SEOComponent'
 import { Presentation } from '@component/molecules/Presentation/Presentation'
 import { BannerBars } from '@component/molecules/BannerBars/BannerBars'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { HeadFC, PageProps } from 'gatsby'
 import gsap from 'gsap'
 

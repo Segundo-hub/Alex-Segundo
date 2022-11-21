@@ -20,6 +20,17 @@ export const onPreRenderHTML: GatsbySSR['onPreRenderHTML'] = ({ getHeadComponent
     replaceHeadComponents(headsReplacement)
 }
 
-export const onRenderBody: GatsbySSR['onRenderBody'] = ({ setHtmlAttributes }) => {
+export const onRenderBody: GatsbySSR['onRenderBody'] = ({ setHtmlAttributes, setHeadComponents }) => {
     setHtmlAttributes({ lang: 'en-US' })
+    // setHeadComponents([
+    //     <script
+    //         dangerouslySetInnerHTML={{
+    //             __html: `
+    //                 var html = document.querySelector('html);
+    //                 var height = window.innerHeight;
+    //                 html && html.setAttribute('style', '--vh: height')
+    //             `,
+    //         }}
+    //     />,
+    // ])
 }

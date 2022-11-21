@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function HtmlTemplate(props) {
     return (
-        <html lang='en' {...props.htmlAttributes}>
+        <html {...props.htmlAttributes}>
             <head>
                 <meta charSet='utf-8' />
                 <meta httpEquiv='x-ua-compatible' content='ie=edge' />
@@ -14,6 +14,12 @@ export default function HtmlTemplate(props) {
                     rel='stylesheet'
                 />
                 {props.headComponents}
+                <script
+                    defer
+                    dangerouslySetInnerHTML={{
+                        __html: "var html = document.querySelector('html'); var height = window.innerHeight; html && html.setAttribute('style', `--vh: ${height}px`)",
+                    }}
+                />
             </head>
             <body {...props.bodyAttributes}>
                 {props.preBodyComponents}
